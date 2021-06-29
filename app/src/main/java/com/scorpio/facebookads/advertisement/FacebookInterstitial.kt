@@ -36,6 +36,7 @@ class FacebookInterstitial {
 
             override fun onError(ad: Ad, adError: AdError) {
                 Log.e(TAG, "Interstitial ad failed to load: " + adError.errorMessage)
+                LoadingDialog.hideLoadingDialog()
                 dismissCallback()
             }
 
