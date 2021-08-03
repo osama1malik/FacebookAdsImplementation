@@ -4,12 +4,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.scorpio.facebookads.advertisement.FacebookInterstitial
+import com.scorpio.facebookads.advertisement.FacebookNative
 import com.scorpio.facebookads.advertisement.FacebookNativeBanner
 import com.scorpio.facebookads.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    var binding: ActivityMainBinding ?= null
+    var binding: ActivityMainBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +24,8 @@ class MainActivity : AppCompatActivity() {
             ) {}
         }
 
-        FacebookNativeBanner(this).loadNativeBannerAd(binding?.layoutNativeAds?.fbNativeContainer!!, binding!!.layoutNativeAds.parentNativeContainer, "IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID")
+//        FacebookNativeBanner(this).loadNativeBannerAd(binding?.layoutNativeAds?.fbNativeContainer!!, binding!!.layoutNativeAds.parentNativeContainer, "IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID")
+
+        FacebookNative(this).loadNativeAd(binding?.layoutNativeAds?.nativeAdContainer!!, binding?.layoutNativeAds?.parentNativeContainer!!, "IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID")
     }
 }
